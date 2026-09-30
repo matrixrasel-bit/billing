@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আমার হিসাব</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>আমার হিসাব</h1>
+  <div class="month"><button id="prev">‹</button><b id="mlabel"></b><button id="next">›</button></div>
+  <nav>
+    <button data-t="ov" class="on">সারাংশ</button>
+    <button data-t="inc">আয়</button>
+    <button data-t="exp">খরচ</button>
+  </nav>
+
+  <section id="ov">
+    <div class="cards">
+      <div class="card"><small>মোট আয়</small><b id="sIn" class="pos"></b></div>
+      <div class="card"><small>মোট খরচ</small><b id="sOut" class="neg"></b></div>
+      <div class="card"><small>বাকি</small><b id="sBal"></b></div>
+    </div>
+    <h2>খরচের খাত</h2>
+    <div id="cats"></div>
+    <h2>Part-time (Restaurant)</h2>
+    <div id="rest"></div>
+    <h2>Backup</h2>
+    <div class="row2"><button id="exp_json">Backup নামান</button><button id="imp_json">Backup ফেরত আনুন</button><input id="file" type="file" accept=".json" hidden></div>
+  </section>
+
+  <section id="inc" hidden>
+    <div class="form">
+      <input id="iDate" type="date">
+      <select id="iType"></select>
+      <div id="shift" class="row2"><label>শুরু<input id="iS" type="time"></label><label>শেষ<input id="iE" type="time"></label></div>
+      <input id="iPay" type="number" inputmode="decimal" placeholder="কত টাকা পেলেন">
+      <input id="iNote" placeholder="নোট (ঐচ্ছিক)">
+      <button id="iAdd" class="primary">আয় যোগ করুন</button>
+    </div>
+    <div id="iList"></div>
+  </section>
+
+  <section id="exp" hidden>
+    <div class="form">
+      <input id="eDate" type="date">
+      <select id="eCat"></select>
+      <input id="eAmt" type="number" inputmode="decimal" placeholder="কত টাকা খরচ">
+      <input id="eNote" placeholder="নোট / নাম (যেমন Netflix)">
+      <button id="eAdd" class="primary">খরচ যোগ করুন</button>
+    </div>
+    <div id="eList"></div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
